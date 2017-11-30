@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    long long n,k;
+    while(cin>>n>>k){
+        long long sqrtn = int (sqrt(n));
+        vector<long long> st;
+        long long res;
+        for(long long i=1; i<=sqrtn; i++){
+            if(n%i==0){
+                st.push_back(i);
+                res = n/i;
+                if(res!=i)
+                    st.push_back(res);
+            }
+        }
+        sort(st.begin(),st.end());
+        if(!st.empty() && st.size()>=k){
+            if(st[k-1]) cout<<st[k-1]<<endl;
+        }
+        else cout<<"-1"<<endl;
+    }
+    return 0;
+}
