@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    long long n,x,count=0;
+    while(cin>>n>>x){
+        if(x<=n) {
+            count++;
+        }
+        for(long long i = 2; i<=n; i++){
+            if(x%i==0){
+                if(x/i<=n)count++;
+
+            }
+        }
+        cout<<count<<endl;
+        count=0;
+    }
+    return 0;
+}
